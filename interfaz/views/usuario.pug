@@ -1,0 +1,29 @@
+extends layout3
+
+block content
+h1(style="color:white;")= title
+div
+    table.table.table-striped
+      tr
+        th
+          form(action="/" method="GET")
+            input(type="submit" value="Crear usuario" class="glyphicon glyphicon-user btn-lg btn-success")
+        th
+          form(action="/" method="GET")
+            input(type="text" name="user" placeholder="Ingrese el codigo de Usuario")
+            input(type="submit" value="Eliminar usuario" class="glyphicon glyphicon-user btn-lg btn-danger")
+
+div
+    h2 Ver Usuarios
+    table.table.table-striped
+        for user in usuarios
+            tr  
+                td=user.id
+                td=user.nombre
+                td
+                    form(action="/" method="GET")
+                        input(type="submit" value="Editar usuario" class="glyphicon glyphicon-user btn-lg btn-warning")
+                td
+                    form(action="/" method="GET")
+                        input(type="submit" value="Eliminar usuario" class="glyphicon glyphicon-user btn-lg btn-danger")
+      
